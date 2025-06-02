@@ -52,3 +52,6 @@ python client.py
 ```
 ### 6. Acesse a aplicação
 Abra o navegador e acesse `http://localhost:5000` para ver a interface do cliente Flask.
+
+## Interface da aplicação
+![Weather_app](https://github.com/MateusS0ares/trabalho-xmlrpc/blob/main/client_rpc/static/img/weather_app.png?raw=true)
