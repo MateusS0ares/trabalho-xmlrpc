@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Previsão do Tempo</title>
+    <link rel="icon" href="{{ url_for('static', filename='/img/favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -11,6 +12,7 @@
             <div class="left-panel">
                 <h2>{{ previsao.date.split(',')[0] }}</h2>
                 <p>{{ previsao.date.split(',')[1] }}</p>
+                <img src="{{ url_for('static', filename='img/' + (previsao.current.condition | lower | replace(' ', '_') + '.png')) }}" alt="{{ previsao.current.condition }}" class="weather-icon">
                 <h1>{{ previsao.current.temp }}</h1>
                 <p>{{ previsao.current.condition }}</p>
             </div>
@@ -28,9 +30,9 @@
                 <div class="forecast">
                     {% for dia in previsao.next_days %}
                     <div class="day">
-                        <p>{{ loop.index + 1 }}° dia</p>
-                        <p>{{ dia.temp }}</p>
-                    </div>
+                    <p>{{ dia.day_name }}</p> <!-- Nome do dia da semana -->
+                    <p>{{ dia.temp }}</p>
+                </div>
                     {% endfor %}
                 </div>
             </div>

@@ -3,7 +3,9 @@ body {
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 40px;
+    padding: 0; /* Remove o padding que pode causar scroll */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos no tamanho total */
+    overflow-x: hidden; /* Remove qualquer scroll horizontal */
 }
 
 ul {
@@ -22,14 +24,19 @@ li {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    height: 100vh;          /* Faz o container ocupar toda a altura da janela */
+    padding: 20px;          /* Adiciona um espaçamento interno para evitar cortes */
+    box-sizing: border-box; /* Garante que o padding não cause overflow */
 }
 
 .weather-card {
     background-color: #1f2230;
     border-radius: 20px;
     display: flex;
-    width: 800px;
+    width: 100%;            /* Faz o card ocupar 100% da largura disponível */
+    max-width: 950px;       /* Limita a largura máxima do card */
     overflow: hidden;
 }
 
@@ -39,7 +46,7 @@ li {
 
 .left-panel {
     flex: 1;
-    background: linear-gradient(to bottom, #4e5c94, #2b2f3a);
+    background-color: #59acf4;
     border-right: 2px solid #444;
     text-align: center;
 }
@@ -55,15 +62,21 @@ li {
 }
 
 .day {
-    background: #333;
-    padding: 10px;
+    background: #488bc6;
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
 }
 
+.weather-icon {
+    width: 100px;
+    height: auto;
+    margin: 10px 0;
+}
+
 .input {
   border: 2px solid transparent;
-  width: 25em;
+  width: 35em;
   height: 2.5em;
   padding-left: 0.8em;
   outline: none;
@@ -129,7 +142,11 @@ button:after {
 button:main, button:focus {
  user-select: auto;
 }
-
+.weather-icon {
+    width: 100px;
+    height: auto;
+    margin: 10px 0;
+}
 button:hover:not(:disabled) {
  filter: brightness(1.1);
 }
