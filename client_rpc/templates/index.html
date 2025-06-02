@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-card">
+            <div class="left-panel">
+                <h2>{{ previsao.date.split(',')[0] }}</h2>
+                <p>{{ previsao.date.split(',')[1] }}</p>
+                <h1>{{ previsao.current.temp }}</h1>
+                <p>{{ previsao.current.condition }}</p>
+            </div>
+            <div class="right-panel">
+                <form method="POST">
+                    <input type="text" name="cidade" placeholder="Search Location" value="{{ previsao.city }}" class="input">
+                    <button type="submit">Buscar</button>
+                </form>
+                <ul>
+                    <li><strong>CIDADE</strong> {{ previsao.city }}</li>
+                    <li><strong>TEMPERATURA</strong> {{ previsao.current.temp }}</li>
+                    <li><strong>UMIDADE</strong> {{ previsao.current.humidity }}</li>
+                    <li><strong>VELOCIDADE DO VENTO</strong> {{ previsao.current.wind }}</li>
+                </ul>
+                <div class="forecast">
+                    {% for dia in previsao.next_days %}
+                    <div class="day">
+                        <p>{{ loop.index + 1 }}° dia</p>
+                        <p>{{ dia.temp }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+body {
+    background-color: #2b2f3a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.weather-card {
+    background-color: #1f2230;
+    border-radius: 20px;
+    display: flex;
+    width: 800px;
+    overflow: hidden;
+}
+
+.left-panel, .right-panel {
+    padding: 20px;
+}
+
+.left-panel {
+    flex: 1;
+    background: linear-gradient(to bottom, #4e5c94, #2b2f3a);
+    border-right: 2px solid #444;
+    text-align: center;
+}
+
+.right-panel {
+    flex: 2;
+}
+
+.forecast {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day {
+    background: #333;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input {
+  border: 2px solid transparent;
+  width: 25em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+
+button {
+ appearance: button;
+ background-color: #1899D6;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ height: 40px;
+ padding: 13px 19px;
+ margin-right: 10px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
+}
+
+button:after {
+ background-clip: padding-box;
+ background-color: #1CB0F6;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ bottom: -4px;
+ content: "";
+ left: 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ z-index: -1;
+}
+
+button:main, button:focus {
+ user-select: auto;
+}
+
+button:hover:not(:disabled) {
+ filter: brightness(1.1);
+}
+
+button:disabled {
+ cursor: auto;
+}
+
+button:active:after {
+ border-width: 0 0 0px;
+}
+
+button:active {
+ padding-bottom: 10px;
+}
